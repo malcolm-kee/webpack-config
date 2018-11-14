@@ -1,0 +1,15 @@
+{
+  "name": "webpack-config",
+  "version": "1.0.0",
+  "description": "A sample React project with flexible webpack config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "Malcolm Kee <malcolm.keeweesiong@gmail.com>",
+  "license": "MIT"
+}
