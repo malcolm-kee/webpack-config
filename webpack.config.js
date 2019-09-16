@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
@@ -17,6 +18,10 @@ module.exports = function createWebpackConfig({ mode }) {
     output: {
       filename: 'static/js/[name].js',
       publicPath: '/',
+    },
+    devServer: {
+      port: 9000,
+      historyApiFallback: true,
     },
     module: {
       rules: [
@@ -86,6 +91,9 @@ module.exports = function createWebpackConfig({ mode }) {
     },
     plugins: [
       new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        template: 'public/index.html',
+      }),
       mode === 'production' &&
         new MiniCssExtractPlugin({
           filename: 'static/css/[name].css',

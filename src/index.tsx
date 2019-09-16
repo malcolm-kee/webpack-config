@@ -8,6 +8,9 @@ const App = () => {
     <div className="root">
       <h1>Hello World!</h1>
       <Button variant="primary">Hello</Button>
+      <div>
+        <i className="fa fa-address-book fa-2x"></i>
+      </div>
     </div>
   );
 };
