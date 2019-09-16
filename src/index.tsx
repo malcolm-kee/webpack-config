@@ -1,18 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Button } from './components/button';
+import { App } from './app';
 import './index.scss';
 
-const App = () => {
-  return (
-    <div className="root">
-      <h1>Hello World!</h1>
-      <Button variant="primary">Hello</Button>
-      <div>
-        <i className="fa fa-address-book fa-2x"></i>
-      </div>
-    </div>
-  );
+const renderApp = (AppComponent: typeof App) => {
+  ReactDOM.render(<AppComponent />, document.getElementById('root'));
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+renderApp(App);
+
+if ((module as any).hot) {
+  (module as any).hot.accept('./app', () => {
+    const NextApp = require('./app').App;
+    renderApp(NextApp);
+  });
+}
