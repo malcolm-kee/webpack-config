@@ -1,8 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Button } from './components/button';
+import './index.scss';
 
 const App = () => {
-  return <h1>Hello World!</h1>;
+  return (
+    <div className="root">
+      <h1>Hello World!</h1>
+      <Button variant="primary">Hello</Button>
+    </div>
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
